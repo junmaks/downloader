@@ -1,4 +1,4 @@
-# download
+# Storage of files
 Необходимо установить виртуальное окружение
 Необходимо установить django (pip install django)
 Необходимо сделать миграцию (python manage.py makemigrations  и  python manage.py migrate)
