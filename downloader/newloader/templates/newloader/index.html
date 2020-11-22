@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h5 class="btn-lg">Number of files: {{all_files.count}}</h5>
+    <div class="row" align="left">
+        <table border="2" class="table" align="left"  >
+
+            {% for item in all_files %}
+                <tr align="center" >
+                    <th class="{% cycle 'text-danger' 'text-success' %}" >{{item.name|truncatechars:30|truncatewords:10}}</th>
+                    <th>{{item.created_date|date:"Y-m-d H:i"}}</th>
+                    <th><a href="/download/{{item.hashRename}}" methods="download">download</a></th>
+                    <th><a href="/delete/{{item.hashRename}}" methods="delete">delete</a>
+                </tr>
+                {% empty %}
+                    <h3 class="col-md-8">Store is empty<h3>
+                {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+
+
+
+
